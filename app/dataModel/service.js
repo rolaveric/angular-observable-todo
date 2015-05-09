@@ -1,6 +1,10 @@
 'use strict';
 import _ from 'lodash';
 
+/**
+ * Data store for Todos.
+ * Treats data as immutable.
+ */
 class TodoDataModel {
   constructor() {
     this.todos = [

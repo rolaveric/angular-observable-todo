@@ -2,7 +2,7 @@
   <h2>Yet Another TODO App</h2>
 
   <ul class="list-unstyled">
-    <li class="row form-group" ng-repeat="todo in mainCtrl.todos">
+    <li class="row form-group" ng-repeat="todo in mainCtrl.viewTodos">
       <div class="col-xs-2">
         <input class="form-control" type="checkbox" ng-model="todo.completed" ng-change="mainCtrl.todoChanged(todo)" title="completed"/>
       </div>
