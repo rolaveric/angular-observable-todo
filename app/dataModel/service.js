@@ -14,21 +14,23 @@ class TodoDataModel {
     ];
   }
 
-  all(hideCompleted) {
-    return hideCompleted ? _.reject(this.todos, 'completed') : this.todos;
+  all() {
+    return this.todos;
   }
 
   create() {
     var todo = {id: this.generateGuid(), title: '', completed: false};
-    this.todos.push(todo);
+    this.todos = [].concat(this.todos, [todo]);
     return todo;
   }
 
   update(todo) {
+    this.todos = [].concat(this.todos);
     this.todos.splice(_.findIndex(this.todos, {id: todo.id}), 1, todo);
   }
 
   remove(todo) {
+    this.todos = [].concat(this.todos);
     this.todos.splice(_.findIndex(this.todos, {id: todo.id}), 1);
   }
 
