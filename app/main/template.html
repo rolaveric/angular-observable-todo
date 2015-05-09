@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Yet Another TODO App</h2>
+
+  <ul class="list-unstyled">
+    <li class="row form-group" ng-repeat="todo in mainCtrl.todos">
+      <div class="col-xs-2">
+        <input class="form-control" type="checkbox" ng-model="todo.completed" ng-change="mainCtrl.todoChanged(todo)" title="completed"/>
+      </div>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" ng-model="todo.title" ng-change="mainCtrl.todoChanged(todo)" title="title"/>
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-danger" type="button" ng-click="mainCtrl.deleteClicked(todo)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <button class="btn btn-primary" type="button" ng-click="mainCtrl.createClicked()">New</button>
+
+  <div class="checkbox">
+    <label class="col-xs-offset-1 col-xs-11">
+      <input type="checkbox" ng-model="mainCtrl.hideCompleted" ng-change="mainCtrl.refreshList()"/>
+      Hide Completed
+    </label>
+  </div>
+</div>
