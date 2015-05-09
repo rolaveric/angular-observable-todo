@@ -8,3 +8,5 @@ import 'bootstrap/css/bootstrap.css!';
 angular.module('angular-observable-todo', [])
   .directive('angularObservableTodo', mainDirective)
   .service('TodoDataModel', TodoDataModel);
+
+angular.bootstrap(document.body, ['angular-observable-todo']);
